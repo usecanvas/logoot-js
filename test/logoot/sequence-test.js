@@ -45,6 +45,34 @@ describe('Sequende', function() {
       assertLesserAtomIdent(atomIdent, Sequence.max);
     });
   });
+
+  describe('.insertAtom', function() {
+    it('inserts the atom into the sequence', function() {
+      const sequence = Sequence.emptySequence();
+      const atomIdent = Sequence.genAtomIdent(1, 1, Sequence.min, Sequence.max);
+      const atom = [atomIdent, "Hello, World"];
+      const newSequence = Sequence.insertAtom(sequence, atom);
+      const expectedSequence =
+       [[Sequence.min, null], atom, [Sequence.max, null]];
+
+      assert.deepEqual(newSequence, expectedSequence);
+    });
+
+    it('inserts atoms in longer sequences', function() {
+      const sequence = Sequence.emptySequence();
+      const atomIdent = Sequence.genAtomIdent(1, 1, Sequence.min, Sequence.max);
+      const atom = [atomIdent, "Hello, World"];
+      const newSequence = Sequence.insertAtom(sequence, atom);
+
+      const atomBIdent = Sequence.genAtomIdent(1, 2, atomIdent, Sequence.max);
+      const atomB = [atomBIdent, "Foo Bar"];
+      const finalSequence = Sequence.insertAtom(newSequence, atomB);
+      const expectedSequence =
+        [[Sequence.min, null], atom, atomB, [Sequence.max, null]];
+
+      assert.deepEqual(finalSequence, expectedSequence);
+    });
+  });
 });
 
 function assertGreaterAtomIdent(identA, identB) {
