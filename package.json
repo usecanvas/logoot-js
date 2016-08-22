@@ -1,4 +1,15 @@
 {
+  "name": "logoot",
+  "version": "1.0.0",
+  "description": "A JavaScript implementation of the Logoot CRDT",
+  "keywords": ["logoot", "crdt"],
+  "homepage": "https://github.com/usecanvas/logoot-js",
+  "bugs": "https://github.com/usecanvas/logoot-js/issues",
+  "repository": "github:usecanvas/logoot-js",
+  "license": "MIT",
+  "author": "Jonathan Clem <jonathan@usecanvas.com>",
+  "contributors": ["Jonathan Clem <jonathan@usecanvas.com>"],
+  "main": "dist/logoot.js",
   "devDependencies": {
     "babel-preset-es2015": "^6.13.2",
     "babel-register": "^6.11.6",
