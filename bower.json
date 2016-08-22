@@ -1,0 +1,21 @@
+{
+  "name": "logoot",
+  "authors": [
+    "Jonathan Clem <jonathan@usecanvas.com>"
+  ],
+  "description": "A JavaScript implementation of the Logoot CRDT",
+  "main": "dist/logoot.min.js",
+  "keywords": [
+    "logoot",
+    "crdt"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/usecanvas/logoot-js",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
