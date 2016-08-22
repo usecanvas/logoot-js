@@ -47,11 +47,11 @@ describe('Sequende', function() {
   });
 
   describe('.insertAtom', function() {
-    it('inserts the atom into the sequence', function() {
+    it('inserts the atom into the sequence with the function', function() {
       const sequence = Sequence.emptySequence();
       const atomIdent = Sequence.genAtomIdent(1, 1, Sequence.min, Sequence.max);
       const atom = [atomIdent, "Hello, World"];
-      const newSequence = Sequence.insertAtom(sequence, atom);
+      const newSequence = Sequence.insertAtom(sequence, atom, insertMut);
       const expectedSequence =
        [[Sequence.min, null], atom, [Sequence.max, null]];
 
@@ -62,11 +62,11 @@ describe('Sequende', function() {
       const sequence = Sequence.emptySequence();
       const atomIdent = Sequence.genAtomIdent(1, 1, Sequence.min, Sequence.max);
       const atom = [atomIdent, "Hello, World"];
-      const newSequence = Sequence.insertAtom(sequence, atom);
+      const newSequence = Sequence.insertAtom(sequence, atom, insertMut);
 
       const atomBIdent = Sequence.genAtomIdent(1, 2, atomIdent, Sequence.max);
       const atomB = [atomBIdent, "Foo Bar"];
-      const finalSequence = Sequence.insertAtom(newSequence, atomB);
+      const finalSequence = Sequence.insertAtom(newSequence, atomB, insertMut);
       const expectedSequence =
         [[Sequence.min, null], atom, atomB, [Sequence.max, null]];
 
@@ -81,4 +81,9 @@ function assertGreaterAtomIdent(identA, identB) {
 
 function assertLesserAtomIdent(identA, identB) {
   return assert.equal(Sequence.compareAtomIdents(identA, identB), -1);
+}
+
+function insertMut(sequence, index, atom) {
+  sequence.splice(index, 0, atom);
+  return sequence;
 }
