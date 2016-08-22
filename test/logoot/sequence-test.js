@@ -2,7 +2,7 @@ const Sequence = require('../../lib/logoot/sequence');
 const assert = require('assert');
 const { describe, it } = require('mocha');
 
-describe('Sequende', function() {
+describe('Sequence', function() {
   describe('.compareAtomIdents', function() {
     it('returns -1 when less-than', function() {
       assert.equal(
