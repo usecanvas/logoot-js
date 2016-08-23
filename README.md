@@ -1,8 +1,11 @@
 # Logoot
 
 A JavaScript implementation of the
-[Logoot CRDT](https://hal.archives-ouvertes.fr/inria-00432368/document). **This
-is a work-in-progress and is not battle-tested.**
+[Logoot CRDT](https://hal.archives-ouvertes.fr/inria-00432368/document). There is
+an Elixir companion library to this one at
+[usecanvas/logoot_ex](https://github.com/usecanvas/logoot_ex).
+
+**This is a work-in-progress and is not battle-tested.**
 
 ## Installation
 
