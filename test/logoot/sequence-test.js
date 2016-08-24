@@ -44,6 +44,13 @@ describe('Sequence', function() {
       assertGreaterAtomIdent(atomIdent, Sequence.min);
       assertLesserAtomIdent(atomIdent, Sequence.max);
     });
+
+    it('falls back to the min atom when necessary', function() {
+      const atomIdent =
+        Sequence.genAtomIdent(1, 1, Sequence.min, [[[0, 0], [1, 0]], 1]);
+      assertGreaterAtomIdent(atomIdent, Sequence.min);
+      assertLesserAtomIdent(atomIdent, [[[0, 0], [1, 0]], 1]);
+    });
   });
 
   describe('.insertAtom', function() {
